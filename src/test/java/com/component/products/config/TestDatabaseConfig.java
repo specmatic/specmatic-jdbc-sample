@@ -20,7 +20,7 @@ public class TestDatabaseConfig {
     @Primary
     @Bean
     public DataSource dataSource() {
-        return new JdbcStubFactory(DATABASE_STUB_PORT, DATABASE_EXPECTATIONS_DIRECTORY).createDataSource();
+        return new JdbcStubFactory().createDataSource(DATABASE_STUB_PORT, DATABASE_EXPECTATIONS_DIRECTORY);
     }
 
 }
