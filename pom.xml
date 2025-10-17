@@ -117,6 +117,20 @@
         </dependency>
     </dependencies>
 
+    <repositories>
+        <repository>
+            <id>specmatic-releases</id>
+            <name>Specmatic Releases</name>
+            <url>https://repo.specmatic.io/releases</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
     <build>
         <plugins>
             <plugin>
