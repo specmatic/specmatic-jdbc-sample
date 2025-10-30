@@ -18,7 +18,7 @@
         <java.version>17</java.version>
         <kotlin-coroutines.version>1.6.4</kotlin-coroutines.version>
         <kotlin.version>1.9.10</kotlin.version>
-        <lombok.version>1.18.34</lombok.version>
+        <lombok.version>1.18.42</lombok.version>
     </properties>
 
     <dependencies>
