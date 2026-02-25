@@ -59,7 +59,7 @@
             <groupId>io.specmatic</groupId>
             <artifactId>junit5-support</artifactId>
             <scope>test</scope>
-            <version>2.33.0</version>
+            <version>2.40.1</version>
             <exclusions>
                 <exclusion>
                     <groupId>io</groupId>
