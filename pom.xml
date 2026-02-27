@@ -21,6 +21,19 @@
         <lombok.version>1.18.42</lombok.version>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <!-- Explicitly define Jackson BOM to manage versions -->
+            <dependency>
+                <groupId>com.fasterxml.jackson</groupId>
+                <artifactId>jackson-bom</artifactId>
+                <version>2.19.4</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -35,69 +48,35 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.fasterxml.jackson.core</groupId>
-                    <artifactId>jackson-core</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
             <groupId>org.liquibase</groupId>
             <artifactId>liquibase-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.specmatic</groupId>
-            <artifactId>junit5-support</artifactId>
+            <groupId>io.specmatic.enterprise</groupId>
+            <artifactId>executable</artifactId>
+            <version>1.4.1-SNAPSHOT</version>
             <scope>test</scope>
-            <version>2.33.0</version>
             <exclusions>
                 <exclusion>
                     <groupId>io</groupId>
                     <artifactId>cucumber</artifactId>
                 </exclusion>
                 <exclusion>
-                    <groupId>com.fasterxml.jackson.core</groupId>
-                    <artifactId>jackson-core</artifactId>
+                    <groupId>com.fasterxml.jackson</groupId>
+                    <artifactId>jackson-bom</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
-        <dependency>
-        <artifactId>specmatic-jdbc</artifactId>
-            <groupId>io.specmatic.jdbc</groupId>
-            <scope>test</scope>
-            <version>0.12.2</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>in.specmatic</groupId>
-                    <artifactId>specmatic-core</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>com.fasterxml.jackson.core</groupId>
-                    <artifactId>jackson-core</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
         <dependency>
             <groupId>io.swagger.parser.v3</groupId>
             <artifactId>swagger-parser</artifactId>
             <version>2.1.38</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.fasterxml.jackson.core</groupId>
-                    <artifactId>jackson-core</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <dependency>
@@ -116,20 +95,6 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
     </dependencies>
-
-    <repositories>
-        <repository>
-            <id>specmatic-releases</id>
-            <name>Specmatic Releases</name>
-            <url>https://repo.specmatic.io/releases</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
 
     <build>
         <plugins>
