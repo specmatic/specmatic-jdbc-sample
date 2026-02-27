@@ -1,5 +1,15 @@
-contract_repositories:
-- type: git
-  repository: https://github.com/specmatic/specmatic-order-contracts.git
-  test:
-    - io/specmatic/examples/store/openapi/api_products_v1.yaml
+version: 3
+systemUnderTest:
+  service:
+    definitions:
+      - definition:
+          source:
+            git:
+              url: https://github.com/specmatic/specmatic-order-contracts.git
+          specs:
+            - io/specmatic/examples/store/openapi/api_products_v1.yaml
+    runOptions:
+      openapi:
+        type: test
+        baseUrl: http://localhost:8080
+        actuatorUrl: http://localhost:8080/actuator/mappings
