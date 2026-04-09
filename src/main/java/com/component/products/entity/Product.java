@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+//Testing out sample project wiring
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
