@@ -16,7 +16,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Trigger Order BFF sample gate after publish
-        if: success() && github.event_name == 'push' && startsWith(github.ref, 'refs/heads/main') && matrix.os == 'ubuntu-latest'
+        if: success() && github.event_name == 'push' && matrix.os == 'ubuntu-latest'
+
         run: |
           set -euo pipefail
 
